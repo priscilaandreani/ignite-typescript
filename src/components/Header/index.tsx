@@ -4,7 +4,7 @@ import { Container } from './styles';
 import Logo from '../../assets/logo.svg';
 import { HeaderProps } from './types';
 
-export function Header({ openModal }: HeaderProps) {
+export default function Header({ openModal }: HeaderProps) {
   return (
     <Container>
       <header>

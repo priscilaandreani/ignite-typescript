@@ -3,9 +3,9 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { useField } from '@unform/core';
 
 import { Container } from './styles';
-import { InputParams } from './types';
+import { InputProps } from './types';
 
-const Input = ({ name, icon: Icon, ...rest }: InputParams) => {
+const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
