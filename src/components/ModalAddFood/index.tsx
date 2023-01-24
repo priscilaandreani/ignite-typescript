@@ -4,12 +4,18 @@ import { FiCheckSquare } from 'react-icons/fi';
 import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
+import { ModalAddFoodParams } from './types';
+import { IFood } from '../../pages/Dashboard/types';
 
-export default function ModalAddFood({ isOpen, setIsOpen, handleAddFood }) {
+export default function ModalAddFood({
+  isOpen,
+  setIsOpen,
+  handleAddFood,
+}: ModalAddFoodParams) {
   const formRef = useRef(null);
 
   const handleSubmit = useCallback(
-    async (data) => {
+    async (data: IFood) => {
       handleAddFood(data);
       setIsOpen(false);
     },
