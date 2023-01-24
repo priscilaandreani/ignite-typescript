@@ -4,33 +4,35 @@ import { FiCheckSquare } from 'react-icons/fi';
 import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
+import { ModalEditFoodParams } from './types';
+import { IFood } from '../../pages/Dashboard/types';
 
 export function ModalEditFood({
   isOpen,
   setIsOpen,
   handleUpdateFood,
   editingFood,
-}) {
-  const formRef = useRef();
+}: ModalEditFoodParams) {
+  const formRef = useRef(null);
 
   const handleSubmit = useCallback(
-    async (data) => {
+    async (data: IFood) => {
       handleUpdateFood(data);
-      setIsOpen(isOpen);
+      setIsOpen(false);
     },
-    [handleUpdateFood, isOpen, setIsOpen]
+    [handleUpdateFood, setIsOpen]
   );
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <Form ref={formRef} onSubmit={handleSubmit} initialData={editingFood}>
         <h1>Editar Prato</h1>
-        <Input name='image' placeholder='Cole o link aqui' />
+        <Input name='image' placeholder='Cole o link aqui' icon={null} />
 
-        <Input name='name' placeholder='Ex: Moda Italiana' />
-        <Input name='price' placeholder='Ex: 19.90' />
+        <Input name='name' placeholder='Ex: Moda Italiana' icon={null} />
+        <Input name='price' placeholder='Ex: 19.90' icon={null} />
 
-        <Input name='description' placeholder='Descrição' />
+        <Input name='description' placeholder='Descrição' icon={null} />
 
         <button type='submit' data-testid='edit-food-button'>
           <div className='text'>Editar Prato</div>
