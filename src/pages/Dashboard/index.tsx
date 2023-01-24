@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import Header from '../../components/Header';
 import api from '../../services/api';
 import Food from '../../components/Food';
 import ModalAddFood from '../../components/ModalAddFood';
 import { FoodsContainer } from './styles';
 import { IFood } from './types';
 import { ModalEditFood } from '../../components/ModalEditFood';
+import { Header } from '../../components/Header';
 
 export default function Dashboard() {
   const [foods, setFoods] = useState<IFood[]>([]);
