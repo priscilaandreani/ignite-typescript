@@ -27,12 +27,12 @@ export function ModalEditFood({
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <Form ref={formRef} onSubmit={handleSubmit} initialData={editingFood}>
         <h1>Editar Prato</h1>
-        <Input name='image' placeholder='Cole o link aqui' icon={null} />
+        <Input name='image' placeholder='Cole o link aqui' />
 
-        <Input name='name' placeholder='Ex: Moda Italiana' icon={null} />
-        <Input name='price' placeholder='Ex: 19.90' icon={null} />
+        <Input name='name' placeholder='Ex: Moda Italiana' />
+        <Input name='price' placeholder='Ex: 19.90' />
 
-        <Input name='description' placeholder='Descrição' icon={null} />
+        <Input name='description' placeholder='Descrição' />
 
         <button type='submit' data-testid='edit-food-button'>
           <div className='text'>Editar Prato</div>
